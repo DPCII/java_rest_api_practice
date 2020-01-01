@@ -16,13 +16,15 @@ public class QuestionController {
     @Autowired
     private QuestionRepository questionRepository;
 
-    @GetMapping("/test")
+    @GetMapping("/questions")
     public List<Question> getQuestions() {
         return questionRepository.findAll();
     }
 
-    @PostMapping("/test")
+    @PostMapping(path = "/question")
     public Question createQuestion(@RequestBody Question question) {
         return questionRepository.save(question);
     }
+
 }
+

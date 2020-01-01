@@ -3,30 +3,36 @@ package api.practice.server.models;
 import javax.persistence.*;
 
 @Entity
+@Table(name="question")
 public class Question {
 
     @Id
     @GeneratedValue
     private long id;
 
-    private String title;
+    @Column(length=38, nullable = false)
+    private String deck;
 
-    private String description;
+    @Column(length=150, nullable = false)
+    private String question;
 
-    public String getTitle() {
-        return title;
+    @Column(length=150, nullable = false)
+    private String answer;
+
+    public String getQuestion() {
+        return question;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setQuestion(String question) {
+        this.question = question;
     }
 
-    public String getDescription() {
-        return description;
+    public String getAnswer() {
+        return answer;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 
     public long getId() {
@@ -36,4 +42,13 @@ public class Question {
     public void setId(long id) {
         this.id = id;
     }
+
+    public String getDeck() {
+        return deck;
+    }
+
+    public void setDeck() {
+        this.deck = deck;
+    }
+
 }
